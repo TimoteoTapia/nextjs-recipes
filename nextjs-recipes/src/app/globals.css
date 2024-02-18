@@ -1,0 +1,31 @@
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Colores relacionados con la cocina */
+:root {
+  --color-primary: #ff5733; /* Naranja */
+  --color-secondary: #4caf50; /* Verde */
+  --color-accent: #ffc300; /* Amarillo */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #f3f4f6; /* Un tono de gris claro */
+  font-family: 'Roboto', sans-serif; /* Usa la fuente Roboto */
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
