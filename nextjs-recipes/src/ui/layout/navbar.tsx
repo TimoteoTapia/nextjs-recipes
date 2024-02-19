@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar() {
   return (
     <nav className='bg-primary shadow-lg fixed top-0 w-full'>
-      <div className='container mx-auto px-4 py-2'>
+      <div className='mx-auto px-4 py-2'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
           <div className='flex-shrink-0'>
@@ -12,7 +12,7 @@ export default function Navbar() {
             </a>
           </div>
           {/* Navigation Links */}
-          <div className='hidden md:block'>
+          <div className='hidden flex-1 md:block'>
             <ul className='flex space-x-4'>
               <li>
                 <a href='#' className='text-white hover:text-gray-300'>
