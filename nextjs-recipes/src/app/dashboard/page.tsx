@@ -1,15 +1,69 @@
 export default function Page() {
   return (
-    <main className='flex min-h-screen flex-col p-6'>
-      <div className='flex h-20 shrink-0 items-end rounded-lg bg-green-800 p-4 md:h-52'>
-        Hola
-      </div>
-      <div className='mt-4 flex grow flex-col gap-4 md:flex-row'>
-        <div className='flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20'>
-          Handcrafted Haven is an innovative web application that aims to
-          provide a platform for artisans and crafters to showcase and sell
-          their unique handcrafted items.
-        </div>
+    <main className='flex flex-col min-h-screen p-6'>
+      {/* Header */}
+      <header className='flex justify-center items-center h-20 md:h-24 bg-green-800 text-white font-semibold text-xl md:text-2xl rounded-t-lg'>
+        Welcome to Cake Dashboard
+      </header>
+
+      {/* Main Content */}
+      <div className='flex flex-col md:flex-row gap-6 mt-8'>
+        {/* Side Navigation */}
+        <aside className='bg-gray-800 text-white rounded-lg p-4 md:w-1/4'>
+          <h2 className='text-lg font-semibold mb-4'>Navigation</h2>
+          <ul className='space-y-2'>
+            <li>
+              <a href='#' className='hover:text-green-400'>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href='#' className='hover:text-green-400'>
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href='#' className='hover:text-green-400'>
+                Products
+              </a>
+            </li>
+            <li>
+              <a href='#' className='hover:text-green-400'>
+                Customers
+              </a>
+            </li>
+            <li>
+              <a href='#' className='hover:text-green-400'>
+                Settings
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        {/* Main Content Area */}
+        <section className='md:w-3/4'>
+          <h1 className='text-2xl font-semibold mb-4'>
+            Welcome to Cake Dashboard!
+          </h1>
+          <p className='text-gray-600 leading-relaxed'>
+            Handcrafted Haven is an innovative web application that aims to
+            provide a platform for artisans and crafters to showcase and sell
+            their unique handcrafted items. From delicious cakes to stunning
+            decorations, this is the place to discover the finest handcrafted
+            treats for any occasion.
+          </p>
+          <p className='text-gray-600 mt-4 leading-relaxed'>
+            Our platform connects passionate bakers with cake enthusiasts,
+            offering a seamless experience for browsing, ordering, and sharing
+            delightful creations. Whether you're a baker looking to expand your
+            customer base or a cake lover in search of the perfect dessert,
+            Handcrafted Haven has something for everyone.
+          </p>
+          <p className='text-gray-600 mt-4 leading-relaxed'>
+            Join us on this sweet journey as we celebrate the art of baking and
+            bring joy to every slice!
+          </p>
+        </section>
       </div>
     </main>
   );

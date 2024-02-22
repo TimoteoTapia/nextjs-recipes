@@ -11,7 +11,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { registerUser } from '@/lib/action';
 
 export default function SingupForm() {
-  const initialState = { message: null, errors: {} };
+  const initialState = { message: '', errors: {} };
   const [errorMessage, dispatch] = useFormState(registerUser, initialState);
 
   return (
@@ -115,13 +115,13 @@ export default function SingupForm() {
             </div>
           </div>
         </div>
-        <SingupButton />
+        <SignupButton />
       </div>
     </form>
   );
 }
 
-function SingupButton() {
+function SignupButton() {
   const { pending } = useFormStatus();
 
   return (

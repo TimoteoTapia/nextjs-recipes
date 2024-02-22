@@ -9,7 +9,7 @@ export default function Footer() {
         <div className='flex flex-wrap justify-between items-center'>
           <div className='flex justify-start space-x-3'>
             <Image
-              src='https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe'
+              src='/nextjs-recipes/src/app/sweet-cake-logo-cupcake-icon-600nw-2330533269.webp'
               className='w-28 rounded-full '
               alt='logo'
               width={30}

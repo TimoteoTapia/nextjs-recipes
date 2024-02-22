@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Providers } from './providers';
-import Navbar from '@/ui/layout/navbar';
-import Footer from '@/ui/layout/footer';
+import '@/app/globals.css';
+import { inter } from '@/ui/fonts';
+
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '',
-  description: 'Kevin Tapia',
+  title: {
+    template: '%s | Acme Dashboard',
+    default: 'Acme Dashboard',
+  },
 };
 
 export default function RootLayout({
@@ -15,16 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <Providers>
-        <header>
-          <Navbar />
-        </header>
-        <main className='flex-grow'>{children}</main>
-        <footer className='mt-auto'>
-          <Footer />
-        </footer>
-      </Providers>
-    </div>
+    <html lang='en'>
+      <body className={`${inter.className} antialiased`}>{children}</body>
+    </html>
   );
 }

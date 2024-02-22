@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <nav className='bg-primary shadow-lg fixed top-0 w-full'>
+    <nav className='bg-black shadow-lg fixed top-0 w-full'>
       <div className='mx-auto px-4 py-2'>
-        <div className='flex justify-between items-center h-16'>
+        <div className='relative gap-2 flex justify-between items-center h-16'>
           {/* Logo */}
           <div className='flex-shrink-0'>
             <a href='#' className='text-white text-lg font-bold'>
@@ -12,7 +12,7 @@ export default function Navbar() {
             </a>
           </div>
           {/* Navigation Links */}
-          <div className='hidden flex-1 md:block'>
+          <div className='hidden md:block '>
             <ul className='flex space-x-4'>
               <li>
                 <a href='#' className='text-white hover:text-gray-300'>
