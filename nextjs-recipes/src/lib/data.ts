@@ -1,4 +1,4 @@
-'user server';
+'use server';
 
 import db from './db';
 import { unstable_noStore as noStore, revalidatePath } from 'next/cache';
@@ -156,11 +156,39 @@ export async function deleteProduct(id: string) {
 export async function fetchReviewsByUserId(id: string) {
   noStore();
   try {
-    const reviews = await db.productRecipes.findMany({
+    const reviews = await db.reviewRecipes.findMany({
       where: {
         userId: id,
       },
     });
+    return reviews;
+  } catch (error) {
+    console.error('Failed to fetch reviews:', error);
+    throw new Error('Failed to fetch reviews.');
+  }
+}
+
+export async function fetchReviewsByProductId(id: string) {
+  try {
+    const reviews = await db.reviewRecipes.findMany({
+      where: {
+        productId: id,
+      },
+      include: {
+        user: true, // Include the user details associated with each review
+      },
+    });
+    return reviews;
+  } catch (error) {
+    console.error('Failed to fetch reviews:', error);
+    throw new Error('Failed to fetch reviews.');
+  }
+}
+
+export async function fetchReviews() {
+  noStore();
+  try {
+    const reviews = await db.reviewRecipes.findMany();
     return reviews;
   } catch (error) {
     console.error('Failed to fetch reviews:', error);

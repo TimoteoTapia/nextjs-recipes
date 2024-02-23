@@ -3,6 +3,7 @@ import '@/app/globals.css';
 import { Providers } from '@/app/providers';
 import Navbar from '@/ui/layout/navbar';
 import Footer from '@/ui/layout/footer';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '',
@@ -20,7 +21,7 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-        <main className='flex-grow mt-40 mb-10'>{children}</main>
+        <main className='flex-grow mt-5 mb-10 px-10'>{children}</main>
         <footer className='mt-auto'>
           <Footer />
         </footer>

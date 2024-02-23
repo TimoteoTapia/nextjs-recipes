@@ -1,70 +1,85 @@
-export default function Page() {
+'use client';
+
+import { useState, useEffect } from 'react';
+import { fetchProducts } from '@/lib/data';
+import Image from 'next/image';
+import Link from 'next/link';
+
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string | null;
+  description: string | null;
+}
+
+export default function ProductsPage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filterName, setFilterName] = useState<string>('');
+
+  useEffect(() => {
+    const obtainProducts = async () => {
+      try {
+        const productsData: Product[] = await fetchProducts();
+        setProducts(productsData);
+      } catch (error: any) {
+        console.error('Error to fetch the products', error.message);
+      }
+    };
+
+    obtainProducts();
+  }, []);
+
+  const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFilterName(event.target.value);
+  };
+
+  const productFilter = products.filter((product) =>
+    product.name.toLowerCase().includes(filterName.toLowerCase())
+  );
   return (
-    <main className='flex flex-col min-h-screen p-6'>
-      {/* Header */}
-      <header className='flex justify-center items-center h-20 md:h-24 bg-green-800 text-white font-semibold text-xl md:text-2xl rounded-t-lg'>
-        Welcome to Cake Dashboard
-      </header>
-
-      {/* Main Content */}
-      <div className='flex flex-col md:flex-row gap-6 mt-8'>
-        {/* Side Navigation */}
-        <aside className='bg-gray-800 text-white rounded-lg p-4 md:w-1/4'>
-          <h2 className='text-lg font-semibold mb-4'>Navigation</h2>
-          <ul className='space-y-2'>
-            <li>
-              <a href='#' className='hover:text-green-400'>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href='#' className='hover:text-green-400'>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href='#' className='hover:text-green-400'>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href='#' className='hover:text-green-400'>
-                Customers
-              </a>
-            </li>
-            <li>
-              <a href='#' className='hover:text-green-400'>
-                Settings
-              </a>
-            </li>
-          </ul>
-        </aside>
-
-        {/* Main Content Area */}
-        <section className='md:w-3/4'>
-          <h1 className='text-2xl font-semibold mb-4'>
-            Welcome to Cake Dashboard!
-          </h1>
-          <p className='text-gray-600 leading-relaxed'>
-            Handcrafted Haven is an innovative web application that aims to
-            provide a platform for artisans and crafters to showcase and sell
-            their unique handcrafted items. From delicious cakes to stunning
-            decorations, this is the place to discover the finest handcrafted
-            treats for any occasion.
-          </p>
-          <p className='text-gray-600 mt-4 leading-relaxed'>
-            Our platform connects passionate bakers with cake enthusiasts,
-            offering a seamless experience for browsing, ordering, and sharing
-            delightful creations. Whether you're a baker looking to expand your
-            customer base or a cake lover in search of the perfect dessert,
-            Handcrafted Haven has something for everyone.
-          </p>
-          <p className='text-gray-600 mt-4 leading-relaxed'>
-            Join us on this sweet journey as we celebrate the art of baking and
-            bring joy to every slice!
-          </p>
-        </section>
+    <>
+      <div className='bg-gray-100 py-12'>
+        <div className='container mx-auto px-4'>
+          <h2 className='text-3xl font-bold text-gray-900 mb-8'>
+            Your Products
+          </h2>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className='border border-gray-300 rounded-lg overflow-hidden'
+              >
+                <div className='relative aspect-w-1 aspect-h-1'>
+                  <Image
+                    src={product.image || 'https://via.placeholder.com/200'}
+                    alt={product.name}
+                    className='object-cover w-full h-full'
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <div className='p-4'>
+                  <h3 className='text-lg font-semibold text-gray-900 mb-2'>
+                    {product.name}
+                  </h3>
+                  <p className='text-gray-700 mb-2'>{product.description}</p>
+                  <p className='text-gray-900 font-semibold'>
+                    ${product.price}
+                  </p>
+                  <div className='mt-4 flex justify-center'>
+                    <Link href={`/dashboard/products/${product.id}`}>
+                      <p className='bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-md transition duration-300'>
+                        Manage
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </main>
+    </>
   );
 }

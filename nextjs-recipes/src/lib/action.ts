@@ -4,7 +4,7 @@ import db from './db';
 import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { signIn } from '../../auth';
+import { signIn } from './auth/auth';
 import { AuthError } from 'next-auth';
 
 const bcrypt = require('bcrypt');
@@ -126,8 +126,8 @@ export async function CreateProductProfile(
     return { message: 'Database Error: Failed to Create Product.' };
   }
 
-  revalidatePath('/products');
-  redirect('/products');
+  revalidatePath('/dashboard/profile/products');
+  redirect('/dashboard/profile/products');
 }
 
 export async function UpdateProductProfile(id: string, formData: FormData) {
@@ -163,8 +163,8 @@ export async function UpdateProductProfile(id: string, formData: FormData) {
     return { message: 'Database Error: Failed to Update Product.' };
   }
 
-  revalidatePath('/products');
-  redirect('/products');
+  revalidatePath('/dashboard/profile/products');
+  redirect('/dashboard/profile/products');
 }
 
 export async function authenticate(

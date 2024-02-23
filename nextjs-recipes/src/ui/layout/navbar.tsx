@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <nav className='bg-black shadow-lg fixed top-0 w-full'>
+    <nav className='bg-black shadow-lg w-full'>
       <div className='mx-auto px-4 py-2'>
         <div className='relative gap-2 flex justify-between items-center h-16'>
           {/* Logo */}

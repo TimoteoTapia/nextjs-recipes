@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['api.lorem.space'], // Añade el hostname aquí
+        domains: ['api.lorem.space', 'via.placeholder.com'], // Agrega el hostname aquí
     },
 };
 
