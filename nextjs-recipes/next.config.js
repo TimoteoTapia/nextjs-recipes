@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+// @type {import('next').NextConfig}
 const nextConfig = {
     images: {
         domains: ['api.lorem.space', 'via.placeholder.com'], // Agrega el hostname aquí
