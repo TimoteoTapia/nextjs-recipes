@@ -25,6 +25,8 @@ export default async function ProfilePage() {
             src='https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe'
             className='w-28 rounded-full '
             alt='profile picture'
+            width={50}
+            height={50}
           />
         </div>
 

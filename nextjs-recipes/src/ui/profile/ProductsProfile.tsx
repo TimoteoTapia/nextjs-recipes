@@ -22,6 +22,8 @@ export default async function ProductProfileComponent({ id }: { id: string }) {
               src={product.image || 'https://via.placeholder.com/200'}
               alt={product.name}
               className='h-40 w-full object-cover object-center'
+              width={150}
+              height={150}
             />
             <div className='p-4'>
               <h2 className='mb-2 text-xl font-semibold text-gray-800'>

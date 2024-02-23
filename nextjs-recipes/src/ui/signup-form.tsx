@@ -9,6 +9,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { registerUser } from '@/lib/action';
+import Link from 'next/link';
 
 export default function SingupForm() {
   const initialState = { message: '', errors: {} };
@@ -116,6 +117,14 @@ export default function SingupForm() {
           </div>
         </div>
         <SignupButton />
+        <div>
+          <Link
+            href={'/login'}
+            className='flex h-10 items-center rounded-lg bg-blue-500 px-4 text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50 mt-4 w-full'
+          >
+            Login
+          </Link>
+        </div>
       </div>
     </form>
   );

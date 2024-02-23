@@ -55,8 +55,8 @@ export default function ProductsPage() {
                     src={product.image || 'https://via.placeholder.com/200'}
                     alt={product.name}
                     className='object-cover w-full h-full'
-                    width={200}
-                    height={200}
+                    width={20} // Set the width property here
+                    height={20} // You may also set the height property if needed
                   />
                 </div>
                 <div className='p-4'>

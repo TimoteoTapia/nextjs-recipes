@@ -73,19 +73,18 @@ export default function ProductsPage() {
                 />
               </div>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Link href={`/products/${product.id}`}>
-                  <button
-                    style={{
-                      backgroundColor: '#dda15e',
-                      color: 'black',
-                      padding: '0.25rem 0.75rem',
-                      borderRadius: '0.25rem',
-                      border: 'none',
-                      fontSize: '1rem',
-                    }}
-                  >
-                    View Item
-                  </button>
+                <Link
+                  href={`/products/${product.id}`}
+                  style={{
+                    backgroundColor: '#dda15e',
+                    color: 'black',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '0.25rem',
+                    border: 'none',
+                    fontSize: '1rem',
+                  }}
+                >
+                  View Item
                 </Link>
               </div>
             </div>

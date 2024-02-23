@@ -15,16 +15,23 @@ export default function Home() {
                 Elevate your culinary experience with our carefully curated
                 selection of gourmet foods from around the world.
               </p>
-              <a
+              <Link
                 href='/products'
                 className='bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300'
               >
                 Explore Now
-              </a>
+              </Link>
+
+              <Link
+                href='/signup'
+                className='bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300 m-10'
+              >
+                Join
+              </Link>
             </div>
             <div className='flex justify-center'>
               <Image
-                src='/images/food.jpg'
+                src='/images/GettyImages.jpg'
                 alt='Delicious Food'
                 className='rounded-lg'
                 width={250}
@@ -42,7 +49,7 @@ export default function Home() {
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             <div className='flex flex-col items-center'>
               <Image
-                src='/images/feature1.jpg'
+                src='/images/mexican-food-88.jpeg'
                 alt='Feature 1'
                 className='w-32 h-32 object-cover rounded-full mb-4'
                 width={100}
@@ -58,7 +65,7 @@ export default function Home() {
             </div>
             <div className='flex flex-col items-center'>
               <Image
-                src='/images/feature2.jpg'
+                src='/images/intro.jpg'
                 alt='Feature 2'
                 className='w-32 h-32 object-cover rounded-full mb-4'
                 width={100}
@@ -74,7 +81,7 @@ export default function Home() {
             </div>
             <div className='flex flex-col items-center'>
               <Image
-                src='/images/feature3.jpg'
+                src='/images/pambazos.jpg'
                 alt='Feature 3'
                 className='w-32 h-32 object-cover rounded-full mb-4'
                 width={100}
