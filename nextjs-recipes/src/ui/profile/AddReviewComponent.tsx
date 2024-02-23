@@ -1,5 +1,5 @@
 'use client';
-import { CreateReview } from '@/app/lib/actions';
+import { CreateReview } from '@/lib/action';
 import { useFormState, useFormStatus } from 'react-dom';
 
 export default function AddReviewComponent({
@@ -12,32 +12,32 @@ export default function AddReviewComponent({
   const initialState = { message: '', errors: {} };
   const [reviewState, setReviewState] = useFormState(
     CreateReview,
-    initialState,
+    initialState
   );
 
   return (
     <form action={setReviewState}>
       <div>
-        <label htmlFor="title">Review Title</label>
+        <label htmlFor='title'>Review Title</label>
         <div>
-          <input name="title" id="title" type="text" />
+          <input name='title' id='title' type='text' />
         </div>
       </div>
       <div>
-        <label htmlFor="content">Review content</label>
+        <label htmlFor='content'>Review content</label>
         <div>
-          <input name="content" id="content" type="text" />
+          <input name='content' id='content' type='text' />
         </div>
       </div>
       <div>
-        <label htmlFor="rating">Review rating(1-10)</label>
+        <label htmlFor='rating'>Review rating(1-10)</label>
         <div>
-          <input name="rating" id="rating" type="text" />
+          <input name='rating' id='rating' type='text' />
         </div>
       </div>
-      <input name="userId" type="text" value={userId} hidden />
-      <input name="productId" type="text" value={productId} hidden />
-      <input type="submit" value="Create Review" />
+      <input name='userId' type='text' value={userId} hidden />
+      <input name='productId' type='text' value={productId} hidden />
+      <input type='submit' value='Create Review' />
     </form>
   );
 }

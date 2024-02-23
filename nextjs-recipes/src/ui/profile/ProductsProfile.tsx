@@ -5,6 +5,7 @@ import {
   DetailsProductsButton,
   UpdateProductButton,
 } from './Buttons';
+import Image from 'next/image';
 
 export default async function ProductProfileComponent({ id }: { id: string }) {
   const products = await fetchProductsByUserId(id);
@@ -17,7 +18,7 @@ export default async function ProductProfileComponent({ id }: { id: string }) {
             key={product.id}
             className='transform overflow-hidden rounded-lg border border-gray-300 bg-white shadow-lg transition duration-300 ease-in-out hover:scale-105'
           >
-            <img
+            <Image
               src={product.image || 'https://via.placeholder.com/200'}
               alt={product.name}
               className='h-40 w-full object-cover object-center'

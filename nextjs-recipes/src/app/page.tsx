@@ -99,22 +99,22 @@ export default function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             <div className='p-8 bg-gray-100 rounded-lg'>
               <p className='text-gray-700 mb-4'>
-                "Absolutely delicious! The food is always fresh and bursting
-                with flavor. I'm a loyal customer now!"
+                Absolutely delicious! The food is always fresh and bursting with
+                flavor. I am a loyal customer now!
               </p>
               <p className='text-gray-900 font-semibold'>- Emily S.</p>
             </div>
             <div className='p-8 bg-gray-100 rounded-lg'>
               <p className='text-gray-700 mb-4'>
-                "I'm impressed with the variety of options available. There's
-                something for every taste bud!"
+                I am impressed with the variety of options available. There is
+                something for every taste bud!
               </p>
               <p className='text-gray-900 font-semibold'>- Mark T.</p>
             </div>
             <div className='p-8 bg-gray-100 rounded-lg'>
               <p className='text-gray-700 mb-4'>
-                "Top-notch service! Orders are always delivered on time and the
-                packaging is impeccable."
+                Top-notch service! Orders are always delivered on time and the
+                packaging is impeccable.
               </p>
               <p className='text-gray-900 font-semibold'>- Sarah L.</p>
             </div>
@@ -133,7 +133,7 @@ export default function Home() {
               </h3>
               <p className='text-gray-700'>
                 We offer catering services for all occasions. From intimate
-                gatherings to large events, we've got you covered.
+                gatherings to large events, we have got you covered.
               </p>
             </div>
             <div className='p-8 bg-gray-100 rounded-lg shadow-md'>

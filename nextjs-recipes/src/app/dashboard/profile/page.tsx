@@ -1,6 +1,7 @@
 import { fetchUserByEmail } from '@/lib/data';
 import { auth } from '@/lib/auth/auth';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function ProfilePage() {
   const user = await auth();
@@ -20,7 +21,7 @@ export default async function ProfilePage() {
       <section className='mx-auto w-64 rounded-2xl bg-gray-100 px-8 py-6 shadow-lg'>
         <div className='mx-auto mt-6 w-fit'>
           {/* Placeholder para la foto del usuario */}
-          <img
+          <Image
             src='https://api.lorem.space/image/face?w=120&h=120&hash=bart89fe'
             className='w-28 rounded-full '
             alt='profile picture'
